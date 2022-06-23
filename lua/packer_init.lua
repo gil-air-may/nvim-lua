@@ -54,6 +54,8 @@ return packer.startup(function()
 
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
+  use "savq/melange"
+
   -- LSP
   use 'neovim/nvim-lspconfig'
 
@@ -68,6 +70,9 @@ return packer.startup(function()
       'saadparwaiz1/cmp_luasnip',
     },
   }
+
+  -- Formatter
+  use { 'mhartington/formatter.nvim' }
 
   -- Statusline
   use {

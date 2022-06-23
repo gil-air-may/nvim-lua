@@ -35,7 +35,7 @@ opt.ignorecase = true                 -- Ignore case letters when search
 opt.smartcase = true                  -- Ignore lowercase for the whole pattern
 opt.linebreak = true                  -- Wrap on word boundary
 opt.termguicolors = true              -- Enable 24-bit RGB colors
-
+cmd("colorscheme melange")
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
@@ -112,6 +112,14 @@ cmd [[
 -- 2 spaces for selected filetypes
 cmd [[
   autocmd FileType xml,html,xhtml,css,scss,javascript,json,lua,yaml setlocal shiftwidth=2 tabstop=2
+]]
+
+-- Format on save
+cmd [[
+  augroup FormatAutogroup
+    autocmd!
+    autocmd BufWritePost * FormatWrite
+  augroup END
 ]]
 
 -----------------------------------------------------------
