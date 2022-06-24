@@ -127,7 +127,7 @@ cmd [[
 -----------------------------------------------------------
 
 -- Open a terminal pane on the right using :Term
-cmd [[command Term :botright vsplit term://$SHELL]]
+cmd [[command! Term :botright vsplit term://zsh]]
 
 -- Terminal visual tweaks:
 --- enter insert mode when switching to terminal

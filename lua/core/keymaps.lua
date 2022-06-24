@@ -15,6 +15,8 @@ vim.g.mapleader = ' '
 
 -----------------------------------------------------------
 -- Neovim shortcuts
+--- Reload configuration without restarting vim
+map('n', '<leader>r', ":lua require('core/utils').reloadconfig()<CR>")
 -----------------------------------------------------------
 
 -- Disable arrow keys
@@ -31,7 +33,7 @@ map('n', '<C-l>', '<C-w>l')
 --map('n', '<right>', 'nop')
 
 -- Reload configuration without restart nvim
-map('n', '<leader>r', ':so %<CR>')
+-- map('n', '<leader>r', ':so $MYVIMRC<CR>')
 
 -- Move cursor to end of line
 map('n', '<leader>0', '<home>')
@@ -61,7 +63,12 @@ map('n', '<C-p>', ':NvimTreeFindFile<CR>')      -- search file
 map('n', '<C-m>', ':Vista!!<CR>') -- open/close
 
 -- Directory mappings
-map('n', '<leader>9', ':cd ~/.config/nvim/')
+map('n', '<leader>9', ':cd ~/.config/nvim/<CR>')
 
 -- Telescope mappings
+
+--- Fuzzy find (anything) in current directory:
 map('n', '<leader>ff', ':Telescope live_grep<CR>')
+
+--- Fuzzy find buffers
+map('n', '<leader>bb', ':Telescope buffers<CR>')
